@@ -1,0 +1,30 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de compilación o temporales
+*.log
+*.tmp
+*.bak
+
+# Node.js / NPM (si los usas)
+node_modules/
+npm-debug.log
+
+# Archivos de Visual Studio / IDE
+.vscode/
+*.code-workspace
+
+# Archivos de caché
+*.cache
+*.swp
+
+# Carpetas que mencionaste
+CHAT-TRADUCCIONES/
+DICCIONARIO-CSS/
+
+# Otros archivos temporales
+*.zip
+*.tar.gz
+*.rar
