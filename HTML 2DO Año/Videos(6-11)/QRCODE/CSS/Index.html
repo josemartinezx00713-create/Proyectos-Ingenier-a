@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    <title>Menú</title>
+    <style>
+        body {
+            /* background-color: black; */
+            font-family: sans-serif;
+        }
+
+        header {
+            background-color: black;
+            border: 5px dashed orange;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .logo img {
+            height: 50px;
+
+        }
+
+        .logo span {
+            color: white;
+            margin-left: 10px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        nav a:hover {
+            color: rgb(201, 179, 15);
+        }
+
+        @media (max-wi: 680px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="https://www.flaticon.es/resultados?word=codigo" target="_blank" class="logo">
+            <img src="img/logo_code+.png" alt="Logo">
+            <span>Code+</span>
+        </a>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Codigo</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+</body>
+
+</html>

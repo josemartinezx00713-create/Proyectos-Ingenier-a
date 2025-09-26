@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+:root {
+  --border-radius: 15px;
+}
+
+body {
+  background-color: #111;
+}
+
+main .header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+main .header .logo {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+main .header .toogle img {
+  max-width: 40px;
+  cursor: pointer;
+}
+main .banner {
+  background-image: url("../img/banner.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-repeat: none;
+  background-size: cover;
+}
+main .banner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(to top, #111, transparent);
+  z-index: 10;
+}
+main .banner .content-benner {
+  z-index: 10;
+  max-width: 900px;
+}
+main .banner .content-benner h1 {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
+main .banner .content-benner p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+main .banner .bg-fit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+}
+main .about {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+main .about .content-about {
+  min-width: 50%;
+  text-align: end;
+  color: #fff;
+}
+main .about .content-about h2 {
+  font-size: 2rem;
+}
+main .about .img-about {
+  min-width: 50%;
+  border-radius: 20px;
+  min-height: 600px;
+  background-image: url("../img/img1.jpg");
+  background-position: center;
+  overflow: hidden;
+}
+main .banner-2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/banner2.jpg");
+  background-position: right;
+}
+main .banner-2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to top, #111, transparent);
+  z-index: 10;
+}
+main .banner-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, #111, transparent);
+  z-index: 10;
+}
+main .destinos {
+  text-align: center;
+}
+main .destinos .content {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+}
+main .destinos .content .title {
+  font-size: 2rem;
+}
+main .destinos .content .text {
+  color: rgba(255, 255, 255, 0.8);
+}
+main .destinos .destinations-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+main .destinos .destinations-list:hover .destination {
+  opacity: 0.2;
+}
+main .destinos .destinations-list .destination {
+  position: relative;
+  height: 480px;
+  min-width: 350px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+main .destinos .destinations-list .destination:hover {
+  opacity: 1;
+}
+main .destinos .destinations-list .destination .image-container img {
+  height: 100%;
+  width: 100%;
+}
+main .destinos .destinations-list .destination .description {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: yellow;
+  padding: 20px;
+  text-align: center;
+  background-color: #222222;
+  color: white;
+}
+main .destinos .destinations-list .destination .description h3 {
+  font-weight: 500;
+}
+main .destinos .destinations-list .destination .description h3 .city {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+main .banner-3 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/banner3.jpg");
+  background-position: right;
+}
+main .banner-3::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to top, #111, transparent);
+  z-index: 10;
+}
+main .banner-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, #111, transparent);
+  z-index: 10;
+}
+main .footer {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .footer .social-icon {
+  display: flex;
+  gap: 20px;
+}
+main .footer .social-icon li {
+  list-style: none;
+}
+main .footer .social-icon li a {
+  text-decoration: none;
+}
+main .footer .social-icon li a img {
+  filter: invert(1);
+  max-width: 30px;
+}
+main .footer .Copyright {
+  margin-top: 20px;
+  color: #272727;
+}
+main .footer .Copyright a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  transition: background-color 0.5s;
+}
+.btn:hover {
+  background-color: rgb(25, 194, 140);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  main .banner .content-benner h1 {
+    font-size: 3rem;
+  }
+  main .about {
+    flex-direction: column;
+  }
+  main .about .content-about {
+    width: 100%;
+    text-align: center;
+  }
+  main .about .img-about {
+    width: 100%;
+  }
+  main .destinos .destinations-list {
+    flex-direction: column;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  color: #222222;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #48daee;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0f9aac;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body ul {
+  display: flex;
+  gap: 25px;
+}
+body ul li {
+  position: relative;
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 3rem;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 255, 13, 0.479);
+  transition: 0.5s;
+}
+body ul li:hover {
+  width: 180px;
+}
+body ul li:hover::before {
+  opacity: 1;
+}
+body ul li:hover::after {
+  opacity: 0.5;
+}
+body ul li:hover ion-icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0.25s;
+}
+body ul li:hover .title {
+  transform: scale(1);
+}
+body ul li::before {
+  content: "";
+  background: linear-gradient(var(--i), var(--j));
+  position: absolute;
+  inset: 0px;
+  opacity: 0;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+body ul li::after {
+  content: "";
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 30px;
+  filter: blur(15px);
+  background: linear-gradient(45deg, var(--i), var(--j));
+  z-index: -1;
+  opacity: 0;
+  transition: 0.5s;
+}
+body ul li .ion-icon {
+  color: #777;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+body ul li .title {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.1rem;
+  position: absolute;
+  transform: scale(0);
+  color: #fff;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 50px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.element-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input,
+button {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+button {
+    background-color: #215ee0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
