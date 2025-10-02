@@ -21,10 +21,9 @@ npm-debug.log
 *.swp
 
 # Carpetas que mencionaste
-CHAT-TRADUCCIONES/
-DICCIONARIO-CSS/
+./CHAT-TRADUCCIONES/
+./DICCIONARIO-CSS/
 
 # Otros archivos temporales
 *.zip
 *.tar.gz
-*.rar
