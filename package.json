@@ -1,21 +1,21 @@
 {
   "name": "chat-traducciones",
   "version": "1.0.0",
-  "description": "\"proyecto de traduccines usando JavaScript y el api de openai\"",
+  "description": "\"proyecto de traducciones usando JS y el API de openAI\"",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
     "serve": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mario Garcia",
+  "author": "Mario",
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.10.0",
-    "dotenv": "^17.2.0",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
     "express": "^5.1.0",
-    "openai": "^5.9.0"
+    "openai": "^5.23.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

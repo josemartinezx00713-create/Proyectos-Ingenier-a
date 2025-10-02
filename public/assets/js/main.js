@@ -1,50 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let translateButton = document.querySelector("#translateButton");
-  translateButton.addEventListener("click", async () => {
-    let inputText = document.querySelector("#inputText");
+    let translatedButtom = document.querySelector("#translateButton");
+    translatedButtom.addEventListener("click", async () =>{
+        let inputText = document.querySelector("#inputText");
 
-    // Obtener el valor a traducir
-    const texto = document.querySelector("#inputText").value.trim();
 
-    // Lenguaje de destino
-    const targetLang = document.querySelector("#targetLang").value;
+        //Obtener el valor que se desea traducir
+        const texto = document.querySelector("#inputText").value.trim();
 
-    if (!texto) return false; // Si no me el usuario no escribe texto
+        //Lenguaje de destino 
+        const targetLang = document.querySelector("#targetLang").value;
 
-    // Meter el mensaje del usuario a la caja de mensajes
-    const userMessage = document.createElement("div");
-    userMessage.className = "chat-message chat-message-user"; // chat-message-user, modificar para mensjaes del usuario
-    userMessage.textContent = texto;
+        if(!texto) return false;
 
-    const messageContainer = document.querySelector(".chat-messages"); // Agregar el texto al contenedor
-    messageContainer.appendChild(userMessage);
-    messageContainer.scrollTop = messageContainer.scrollHeight;
+        //Meter el mensaje del usuario a la caja de mensajes
+        const userMessage = document.createElement("div");
+        userMessage.className = "chat-message chat-message-user";
+        userMessage.textContent = texto;
 
-    // Peticion ajax al backend
-    try {
-      const response = await fetch("/api/traducir", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          texto,
-          targetLang,
-        }),
-      });
+        const messageContainer = document.querySelector(".chat-messages");
+        messageContainer.appendChild(userMessage);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
 
-      const data = await response.json();
+        //Petición ajax al backend
+        try {
+            const response = await fetch("/api/traducir", {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify({
+                    texto,
+                    targetLang
+                })
+            });
 
-      // Agregar el mensaje de la IA al chat
-      const botMessage = document.createElement("div");
-      botMessage.className = "chat-message chat-message-bot";
-      botMessage.textContent = data.translatedText;
+            const data = await response.json();
 
-      messageContainer.appendChild(botMessage);
-      messageContainer.scrollTop = messageContainer.scrollHeight;
-    } catch (error) {
-      console.log("Error:", error);
-    }
+            //Agregar el mensaje de la IA al chat
+            const botMessage = document.createElement("div");
+            botMessage.className = "chat-message chat-message-bot";
+            botMessage.textContent = data.translatedText;
 
-    // Vaciar el input de tipo texto
-    inputText.value = "";
-  });
+            messageContainer.appendChild(botMessage);
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+
+        } catch(error){
+            console.log("Error"+error);
+        }
+
+        //Limpiar el input
+        inputText.value = "";
+
+        
+    });
+    inputText.addEventListener("keypress", (event)=>{
+            if (event.key === "Enter"){
+                event.preventDefault();
+                translatedButtom.click();
+            }
+        })
 });
