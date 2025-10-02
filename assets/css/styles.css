@@ -1,3 +1,6 @@
+/* ---------------------------
+   Estilos generales
+----------------------------*/
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -7,23 +10,37 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
+  animation: fadeInBody 0.8s ease-in-out;
 }
 
-/*Encabezado*/
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------------------------
+   Encabezado
+----------------------------*/
 .chat-header {
-  background-color: #075e54;
+  background: linear-gradient(90deg, #075e54, #128c7e);
   color: white;
   width: 100%;
-  padding: 12px 20px;
-  box-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
+  padding: 14px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   text-align: center;
   user-select: none;
+  animation: slideDown 0.7s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
 }
 
 .chat-header-content {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
 }
 
@@ -31,69 +48,125 @@ body {
   width: 40px;
   height: 40px;
   object-fit: cover;
+  animation: rotateIn 0.8s ease;
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-180deg) scale(0); opacity: 0; }
+  to { transform: rotate(0deg) scale(1); opacity: 1; }
 }
 
 .chat-header h1 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0;
+  animation: fadeInUp 1s ease;
 }
 
-/*Chat box*/
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------------------------
+   Caja del chat
+----------------------------*/
 .chat-box {
   background-color: white;
-  width: 90%;
+  width: 95%;
   max-width: 600px;
-  height: calc(100vh - 80px);
-  margin: 20px 0;
+  height: calc(100vh - 90px);
+  margin: 15px 0;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 20px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.9s ease;
 }
 
-/*Area de mensajes*/
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ---------------------------
+   Área de mensajes
+----------------------------*/
 .messages {
   flex: 1;
   padding: 15px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   background-color: #ece5dd;
+  scroll-behavior: smooth;
 }
 
 .message {
   max-width: 75%;
-  padding: 10px 14px;
+  padding: 10px 15px;
   border-radius: 18px;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 14.5px;
+  line-height: 1.5;
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
   word-wrap: break-word;
+  transition: transform 0.25s ease, background 0.25s ease;
+  animation: fadeInMessage 0.5s ease;
 }
 
+@keyframes fadeInMessage {
+  from { opacity: 0; transform: translateY(15px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.message:hover {
+  transform: scale(1.04);
+}
+
+/* Mensajes del usuario */
 .user {
   align-self: flex-end;
   background-color: #dcf8c6;
   color: #262626;
-  border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 18px;
+  animation: bounceInRight 0.6s ease;
 }
 
+@keyframes bounceInRight {
+  0% { transform: translateX(100%) scale(0.8); opacity: 0; }
+  60% { transform: translateX(-10px) scale(1.05); opacity: 1; }
+  100% { transform: translateX(0) scale(1); }
+}
+
+/* Mensajes del bot */
 .bot {
   align-self: flex-start;
-  background-color: white;
+  background-color: #fff;
   color: #262626;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 18px;
+  animation: bounceInLeft 0.6s ease;
 }
 
-/*Input: entrada a los mensajes*/
+@keyframes bounceInLeft {
+  0% { transform: translateX(-100%) scale(0.8); opacity: 0; }
+  60% { transform: translateX(10px) scale(1.05); opacity: 1; }
+  100% { transform: translateX(0) scale(1); }
+}
+
+/* ---------------------------
+   Área de entrada de texto
+----------------------------*/
 .input-area {
   display: flex;
-  padding: 20px;
+  padding: 15px;
   border-top: 1px solid #ddd;
   background-color: white;
+  gap: 10px;
+  animation: fadeInUp 0.8s ease;
 }
 
 #messagesInput {
@@ -104,21 +177,90 @@ body {
   font-size: 15px;
   outline: none;
   background-color: #f2f2f2;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #messagesInput:focus {
   background-color: #e6e6e6;
+  transform: scale(1.02);
 }
 
 #sendBtn {
-  margin-left: 10px;
   background-color: #128c7e;
   color: white;
   border: none;
-  padding: 0 20px;
-  border-radius: 20px;
+  padding: 10px 22px;
+  border-radius: 50px;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
   user-select: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+  animation: pulseIn 1s ease;
+}
+
+@keyframes pulseIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#sendBtn:hover {
+  background-color: #0e7668;
+  transform: scale(1.1);
+}
+
+#sendBtn:active {
+  transform: scale(0.95);
+}
+
+/* ---------------------------
+   Responsividad
+----------------------------*/
+@media (max-width: 600px) {
+  .chat-box {
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    animation: none; /* evita lag en móviles */
+  }
+
+  .chat-header h1 {
+    font-size: 18px;
+  }
+
+  .chat-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.autor h1 {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #075e54;
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards, glowPulse 3s ease-in-out infinite;
+}
+
+/* Animación de entrada */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación de resplandor */
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #075e54, 0 0 10px #128c7e;
+  }
+  50% {
+    text-shadow: 0 0 15px #0da890, 0 0 30px #25d366;
+  }
 }
