@@ -20,10 +20,6 @@ npm-debug.log
 *.cache
 *.swp
 
-# Carpetas que mencionaste
-./CHAT-TRADUCCIONES/
-./DICCIONARIO-CSS/
-
 # Otros archivos temporales
 *.zip
 *.tar.gz
